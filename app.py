@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import json
 import sqlite3
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
-
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route("/")
 def hello():
