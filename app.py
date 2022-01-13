@@ -46,7 +46,7 @@ def products():
         connect.commit()
         return f"Product with the id: {cursor.lastrowid} created successfully", 201
 
-@app.route("/product/<int:id>", methods = ["GET", "PUT", "DELETE"])
+@app.route("/product/<int:id>", methods = ["GET", "POST", "DELETE"])
 def single_product(id: int):
     id = int(id)
     connect = db_connect()
