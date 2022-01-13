@@ -64,7 +64,7 @@ def single_product(id: int):
         else:
             return "Product not found", 404
 
-    elif request.method == "PUT":
+    elif request.method == "POST":
         sql_query = """ update products
             set name = ?,
                 price = ?,
